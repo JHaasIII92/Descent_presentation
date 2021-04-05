@@ -61,6 +61,7 @@ function updating_Hessien_Descent(f::Function, ∇f::Function, H::Function, x_k,
         fx = f(x_k, y_k)
         Δxk = P\∇fx
         ∇fxT_Δxk = ∇fx'Δxk
+        t=1
         while f(x_k + t*Δxk[1], y_k + t*Δxk[2]) > fx + α*t*∇fxT_Δxk
             t = β * t
         end
@@ -73,3 +74,5 @@ function updating_Hessien_Descent(f::Function, ∇f::Function, H::Function, x_k,
     end
     return x_vals, y_vals
 end 
+
+;
